@@ -125,4 +125,4 @@ if ! shopt -oq posix; then
   fi
 fi
 export PATH=~/anaconda3/bin:$PATH
-source activate fastai
+# source activate fastai
