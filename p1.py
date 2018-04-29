@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 import sys
 
+
 def Hello(s):
   print('Hello %s' % s)
+
 
 def main():
   s = 'Python!'
