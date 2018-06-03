@@ -21,12 +21,13 @@ while i <= 9
   execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
   let i = i + 1
 endwhile
-" Current window
+" Current window, to use run
+" set statusline=win:%{WindowNumber()}
 function! WindowNumber()
   let str=tabpagewinnr(tabpagenr())
   return str
 endfunction
-
+nmap <leader>wn :set statusline=win:%{WindowNumber()}<CR>
 
 " Vim-Plug
 if empty(glob('~/.vim/autoload/plug.vim'))
