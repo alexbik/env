@@ -8,7 +8,7 @@ if [ ! -f $OLD_ENV_DIR ]; then
 fi
 
 SETUP_DIR=$(dirname "${0}");
-for f in .bashrc .bash_aliases .vimrc; do
+for f in .bashrc .bash_aliases .bash_functions .vimrc; do
   echo $f;
   if [ -f ~/$f ]; then
     echo "Moving existing ~/$f to $OLD_ENV_DIR";
