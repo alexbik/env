@@ -61,6 +61,7 @@ nmap <F8> :TagbarToggle<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+autocmd VimEnter * SyntasticToggleMode  " disable syntastic by default
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -92,6 +93,8 @@ let g:ycm_complete_in_strings = 1 " Completion in string
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 
+" Change auto-completion selection key
+inoremap <C-Space> <C-y>
 " Goto definition with F3, <Ctrl>-o/i to go back/forward
 map <F3> :YcmCompleter GoTo<CR>
 
@@ -103,7 +106,8 @@ hi LineNr ctermfg=8
 
 " Code folding, zM zR to fold/unfold all
 set foldmethod=indent
-set foldnestmax=2 " this way methods of classes are folded, but internal statements aren't
+set foldnestmax=2  " this way methods of classes are folded, but internal statements aren't
+set foldlevelstart=20  " unfold everything in a new window
 nnoremap <space> za
 vnoremap <space> zf
 
