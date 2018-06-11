@@ -9,6 +9,7 @@ set showcmd
 set tabpagemax=20
 set wildignore=*.o,*~,*.la,*.*lo*,*.aux,*.d
 set wildmenu
+set statusline+=col:\ %c,
 
 filetype plugin on          " plugins are enabled
 filetype plugin indent on
