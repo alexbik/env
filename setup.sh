@@ -17,3 +17,5 @@ for f in .bashrc .bash_aliases .bash_functions .vimrc; do
   echo "Creating symlink ~/$f -> $SETUP_DIR/$f";
   ln -s $SETUP_DIR/$f ~/$f;
 done
+
+inst build-essential cmake python-dev python3-dev exuberant-ctags

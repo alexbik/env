@@ -9,6 +9,7 @@ set showcmd
 set tabpagemax=20
 set wildignore=*.o,*~,*.la,*.*lo*,*.aux,*.d
 set wildmenu
+set statusline+=col:\ %c,
 
 filetype plugin on          " plugins are enabled
 filetype plugin indent on
@@ -45,7 +46,7 @@ Plug 'junegunn/vim-plug'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --{clang,go}-completer' }
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
 call plug#end()
