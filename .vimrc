@@ -46,7 +46,7 @@ Plug 'junegunn/vim-plug'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --{clang,go}-completer' }
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
 call plug#end()

@@ -10,6 +10,8 @@ esac
 
 # Extra settings
 export PYLINTRC=~/.pylintrc
+# Colored grep
+export GREP_OPTIONS='--color=auto'
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -19,10 +21,20 @@ export HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 shopt -s cmdhist
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# Glob options
+#use extra globing features. See man bash, search extglob.
+shopt -s extglob
+#include .files when globbing.
+shopt -s dotglob
+#When a glob expands to nothing, make it an empty string instead of the literal characters.
+shopt -s nullglob
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+shopt -s globstar
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 export HISTSIZE=123456
@@ -30,14 +42,6 @@ export HISTFILESIZE=12345678
 export PROMPT_COMMAND='history -a; history -c; history -r; if [ "$(id -u)" -ne 0 ]; then echo "`date` `pwd` `history 1`" >> ~/.shell.log; fi;'
 # Up-arrow and down-arrow by default scroll the history. Instead scroll with completion.
 bind '"\e[A": history-search-backward' '"\e[B": history-search-forward'
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -91,9 +95,9 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+    #alias grep='grep --color=auto'
+    #alias fgrep='fgrep --color=auto'
+    #alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
