@@ -46,7 +46,7 @@ Plug 'junegunn/vim-plug'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --{clang,go}-completer' }
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
 call plug#end()
@@ -93,6 +93,7 @@ let g:ycm_complete_in_strings = 1 " Completion in string
 
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Change auto-completion selection key
 inoremap <C-Space> <C-y>

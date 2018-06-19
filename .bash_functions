@@ -55,6 +55,28 @@ function histsnap()
   cp `ls -aS $HOME/.snapshot/*.?/.bash_history ~/.bash_history | head -1` $HOME/.bash_history
 }
 
+extract () { # extract files. Ignore files with improper extensions.
+    local x
+    ee() { # echo and execute
+        echo "$@"
+        $1 "$2"
+    }
+    for x in "$@"; do
+        [[ -f $x ]] || continue
+        case "$x" in
+            *.tar.bz2 | *.tbz2 )    ee "tar xvjf" "$x"  ;;
+            *.tar.gz | *.tgz ) ee "tar xvzf" "$x"   ;;
+            *.bz2 )             ee "bunzip2" "$x"   ;;
+            *.rar )             ee "unrar x" "$x"   ;;
+            *.gz )              ee "gunzip" "$x"    ;;
+            *.tar )             ee "tar xvf" "$x"   ;;
+            *.zip )             ee "unzip" "$x"     ;;
+            *.Z )               ee "uncompress" "$x" ;;
+            *.7z )              ee "7z x" "$x"      ;;
+        esac
+    done
+}
+
 tip()
 {
   HELP_DIR=$HOME/.bash_help

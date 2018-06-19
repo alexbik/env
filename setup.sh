@@ -32,3 +32,6 @@ for f in aliases functions; do
     ln -s $SETUP_DIR/.bash_$f $BASH_EXTRA_DIR/$f;
   fi
 done
+
+# Add deps
+inst build-essential cmake python-dev python3-dev exuberant-ctags
