@@ -26,12 +26,10 @@ shopt -s cmdhist
 shopt -s checkwinsize
 
 # Glob options
-#use extra globing features. See man bash, search extglob.
+# use extra globing features. See man bash, search extglob.
 shopt -s extglob
-#include .files when globbing.
+# include .files when globbing.
 shopt -s dotglob
-#When a glob expands to nothing, make it an empty string instead of the literal characters.
-shopt -s nullglob
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 shopt -s globstar
