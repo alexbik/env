@@ -1,0 +1,2 @@
+type -a <alias>
+ls -F | grep ")/" | cut -d: -f 2 | sed 's/ /\\\\ /g' | sed 's/(/\\\\(/g' | sed 's/)/\\\\)/g'  |  xargs -I{} bash -c "mv {}/* .

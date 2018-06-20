@@ -79,14 +79,13 @@ extract () { # extract files. Ignore files with improper extensions.
 
 tip()
 {
-  HELP_DIR=$HOME/.bash_help
   if [ -z "$1" ]; then
-    ls $HELP_DIR
+    ls $TIPS_DIR
     return 1
   fi
-  HELP_FILE=$HELP_DIR/$1
-  if [ -r $HELP_FILE ]; then
-    cat $HELP_FILE
+  TIPS_FILE=$TIPS_DIR/$1
+  if [ -r $TIPS_FILE ]; then
+    cat $TIPS_FILE
   else
     man $1
   fi

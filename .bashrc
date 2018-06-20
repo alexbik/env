@@ -8,8 +8,9 @@ case $- in
       *) return;;
 esac
 
-# Extra settings
-export PYLINTRC=~/.pylintrc
+SETUP_DIR=$(dirname "${0}");  # Normally ~/git/env
+source $SETUP_DIR/.bash_common
+
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 

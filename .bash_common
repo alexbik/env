@@ -1,0 +1,11 @@
+# For setup.sh
+export OLD_ENV_DIR=~/.env.old.d;
+export BASH_EXTRA_DIR=~/.bash.d
+# For tip(), see .bash_functions
+export TIPS_DIR=~/.bash_tips.d
+# pylint
+export PYLINTRC=~/.pylintrc
+
+# Dealing with packages
+alias inst="sudo aptitude install -y"
+alias remp="sudo aptitude purge"
