@@ -9,7 +9,7 @@ fi
 SETUP_DIR=$(dirname "${0}");  # Normally ~/git/env
 source $SETUP_DIR/.bash_common
 # Create symlinks to .{bash,vim}rc directly, back up old versions if necessary
-for f in .bashrc .vimrc; do
+for f in .bashrc .vimrc .bash_common; do
   echo $f;
   if [ -f ~/$f ]; then
     echo "Moving existing ~/$f to $OLD_ENV_DIR";
