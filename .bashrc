@@ -72,7 +72,7 @@ xterm*|rxvt*)
 esac
 
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-for f in ~/.bash/*; do
+for f in $BASH_EXTRA_DIR/*; do
     . $f;
 done
 
