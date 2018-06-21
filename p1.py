@@ -1,16 +1,24 @@
 #!/usr/bin/env python
+import argparse
 import sys
 
 
-def Hello(s):
-  print('Hello %s' % s)
+def ParseArgs():
+  parser = argparse.ArgumentParser()
+  parser.add_argument('-i', '--input_file', type=str, default=None)
+  return parser.parse_args()
+
+
+def Solve(x):
+  return x
 
 
 def main():
-  s = 'Python!'
-  if len(sys.argv) > 1:
-    s = sys.argv[1]
-  Hello(s)
+  flags = ParseArgs()
+  with open(flags.input_file) if flags.input_file else sys.stdin as f:
+    for line in f:
+      x = [int(s) for s in line.strip().split()]
+      print(Solve(x))
 
 
 if __name__ == "__main__":
