@@ -7,9 +7,9 @@ if [ ! -d $OLD_ENV_DIR ]; then
 fi
 
 SETUP_DIR=$(dirname "${0}");  # Normally ~/git/env
-source $SETUP_DIR/.bash_common
+source $SETUP_DIR/.bash-common
 # Create symlinks to .{bash,vim}rc directly, back up old versions if necessary
-for f in .bashrc .vimrc .bash_common; do
+for f in .bashrc .vimrc .bash-common; do
   echo $f;
   if [ -f ~/$f ]; then
     echo "Moving existing ~/$f to $OLD_ENV_DIR";
@@ -25,10 +25,10 @@ if [ ! -d $BASH_EXTRA_DIR ]; then
   mkdir -p $BASH_EXTRA_DIR
 fi
 
-for f in aliases functions; do
-  if [ ! -f $BASH_EXTRA_DIR/$f ]; then
-    echo "Creating symlink $BASH_EXTRA_DIR/$f -> $SETUP_DIR/.bash_$f";
-    ln -s $SETUP_DIR/.bash_$f $BASH_EXTRA_DIR/$f;
+for f in $SETUP_DIR/.bash_*; do
+  if [ ! -f $BASH_EXTRA_DIR/$(basename $f) ]; then
+    echo "Creating symlink $BASH_EXTRA_DIR/$f -> $f";
+    ln -s $f $BASH_EXTRA_DIR/$(basename $f);
   fi
 done
 
