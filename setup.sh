@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Run with full path, e.g. ~/git/env/setup.sh
 
 # Create dir for old env settings
 if [ ! -d $OLD_ENV_DIR ]; then
