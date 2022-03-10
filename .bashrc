@@ -35,6 +35,8 @@ shopt -s dotglob
 # match all files and zero or more directories and subdirectories.
 shopt -s globstar
 
+# https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits
+export GIT_EDITOR=vim
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 export HISTSIZE=123456
 export HISTFILESIZE=12345678
